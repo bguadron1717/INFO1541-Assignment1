@@ -3,12 +3,14 @@ package EmployeeObjects;
 
 import EmployeeBlueprints.Employee;
 import EmployeeBlueprints.EmployeeType;
-
 /**
  * Object used to represent the Salary employee in the system.
  * @author lhartman2
  * @version 1.0.1
  */
+
+
+@EmployeeObjects.EmployeeType(type = "Salary")
 public final class SalaryEmployee extends Employee {
     
     private double salary;
