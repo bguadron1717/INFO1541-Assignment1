@@ -31,6 +31,15 @@ public class HourlyEmployeeTest {
         double expectedWageWithRaise = 32.85 + 1.64;
         hourlyEmp.annualRaise();
         assertEquals(expectedWageWithRaise, hourlyEmp.getWage());
+    }
 
+    // Created a test that validates the weekly pay for an hourly employee
+    // Increased the hours to 35
+    //Validated results are equal
+    @Test
+    public void testCalculateWeeklyPay() {
+        double expectedPay = 35 * 32.85;
+        hourlyEmp.increaseHours(35);
+        assertEquals(expectedPay, hourlyEmp.calculateWeeklyPay());
     }
 }
