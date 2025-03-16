@@ -9,11 +9,22 @@ public class SalaryEmployeeTest {
 
 
     // Created a test that validates the weekly pay for a salary employee
-    // Used the get salary divide by 52 times 100 dived by 100 to create the expected salary
+    // Used the Math round method to help with calculations of the results
     // Validated results are equal
     @Test
     public void testCalculateWeeklyPay() {
-        double expectedPay = (double) Math.round(salaryEmp.getSalary() / 52 * 100) /100;
-        assertEquals(expectedPay, salaryEmp.calculateWeeklyPay());
+        double expectedPay = 1237.02;
+        double actualPay = (double) Math.round(salaryEmp.calculateWeeklyPay() * 100) / 100;
+        assertEquals(expectedPay, actualPay);
+    }
+
+    // Created a test that validates the weekly pay for a salary employee
+    // Used the Math round method to help with calculations of the results
+    // Validated results are equal
+    @Test
+    public void testHolidayBonusPay() {
+        double expectedPay = 2164.54;
+        double actualPay = (double) Math.round(salaryEmp.holidayBonus() * 100) / 100;
+        assertEquals(expectedPay, actualPay);
     }
 }

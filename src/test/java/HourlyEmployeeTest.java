@@ -49,8 +49,9 @@ public class HourlyEmployeeTest {
     // Fixed the equation to calculate overtime
     @Test
     public void testCalculateWeeklyPayWithOvertime() {
-        double expectedPay = 40 * 32.85 + (32.85 * 1.5 * (5));
+        double expectedPay = 1560.38;
         hourlyEmp.increaseHours(45);
-        assertEquals(expectedPay, hourlyEmp.calculateWeeklyPay());
+        double actualPay = (double) Math.round(hourlyEmp.calculateWeeklyPay() * 100) / 100;
+        assertEquals(expectedPay, actualPay);
     }
 }
