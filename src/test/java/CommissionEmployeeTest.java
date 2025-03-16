@@ -29,4 +29,14 @@ public class CommissionEmployeeTest {
         double expectedBonus = 0;
         assertEquals(expectedBonus, commissionEmp.holidayBonus());
     }
+
+    // Created a test that validates the annual raise is 0.0305
+    @Test
+    public void testAnnualRaise() {
+        double expectedRaise = 0.0305;
+        commissionEmp.annualRaise();
+        commissionEmp.annualRaise();
+        assertEquals(expectedRaise, commissionEmp.getRate());
+    }
+
 }
