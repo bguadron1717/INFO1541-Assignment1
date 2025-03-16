@@ -35,11 +35,22 @@ public class HourlyEmployeeTest {
 
     // Created a test that validates the weekly pay for an hourly employee
     // Increased the hours to 35
-    //Validated results are equal
+    // Validated results are equal
     @Test
     public void testCalculateWeeklyPay() {
         double expectedPay = 35 * 32.85;
         hourlyEmp.increaseHours(35);
+        assertEquals(expectedPay, hourlyEmp.calculateWeeklyPay());
+    }
+
+    // Created a test that validates the weekly pay for an hourly employee with 5 hours of overtime
+    // Increased the hours to 45
+    // Validated results are equal
+    // Fixed the equation to calculate overtime
+    @Test
+    public void testCalculateWeeklyPayWithOvertime() {
+        double expectedPay = 40 * 32.85 + (32.85 * 1.5 * (5));
+        hourlyEmp.increaseHours(45);
         assertEquals(expectedPay, hourlyEmp.calculateWeeklyPay());
     }
 }
