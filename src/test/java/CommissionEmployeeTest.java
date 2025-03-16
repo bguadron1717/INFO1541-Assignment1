@@ -22,4 +22,11 @@ public class CommissionEmployeeTest {
         commissionEmp.increaseSales(400);
         assertEquals(600, commissionEmp.getSales());
     }
+
+    // Created a test that validate holiday bonus returns 0
+    @Test
+    public void testHolidayBonus() {
+        double expectedBonus = 0;
+        assertEquals(expectedBonus, commissionEmp.holidayBonus());
+    }
 }
